@@ -1,0 +1,9 @@
+﻿numero = int(input ('Infome um número inteiro: '))
+
+numero_dividido = numero / 5
+numero_dividido_int = int (numero_dividido)
+
+if numero_dividido == numero_dividido_int:
+  print('Buzz')
+else:
+  print (numero)

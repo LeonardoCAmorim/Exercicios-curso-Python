@@ -1,0 +1,25 @@
+w = int (input ('digite a largura: '))
+h = int (input ('digite a altura: '))
+auxh = h
+
+if h == 2:
+  while auxh > 0:
+    auxw = w
+    while auxw > 0:
+      print ('#', end="")
+      auxw = auxw - 1
+    print ()
+    auxh = auxh - 1
+
+while auxh > 0:
+  auxw = w - 2
+  while auxw > 0 and (auxh == h or auxh == 1):
+    print ('#', end="")
+    auxw = auxw - 1
+  auxw = w - 2
+  print ('#', end="")
+  while auxw > 0 and not (auxh == h or auxh == 1):
+    print (' ', end="")
+    auxw = auxw - 1
+  print ('#')
+  auxh = auxh - 1

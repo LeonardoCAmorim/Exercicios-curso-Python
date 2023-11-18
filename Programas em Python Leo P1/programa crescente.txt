@@ -1,0 +1,8 @@
+﻿numero_1 = int(input ('Infome o primeiro número inteiro: '))
+numero_2 = int(input ('Infome o segundo número inteiro: '))
+numero_3 = int(input ('Infome o terceiro número inteiro: '))
+
+if numero_1 < numero_2 < numero_3:
+  print ('crescente')
+else:
+  print ('não está em ordem crescente')

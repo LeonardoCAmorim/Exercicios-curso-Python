@@ -1,0 +1,7 @@
+﻿ent_nome = input ('Digite o nome do cliente: ')
+ent_dia_venci = input ('Digite o dia de vencimento: ')
+ent_mes_venci = input ('Digite o mês de vencimento: ')
+ent_valor = input ('Digite o valor da fatura: ')
+
+print ('Olá,', ent_nome)
+print ('A sua fatura com vencimento em', ent_dia_venci, 'de', ent_mes_venci, 'no valor de R$', ent_valor, 'está fechada.')

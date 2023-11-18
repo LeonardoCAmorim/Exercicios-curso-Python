@@ -1,7 +1,0 @@
-﻿Tamanho_L = input ('Digite o valor correspondente ao lado de um quadrado: ')
-
-x = float (Tamanho_L) * 4
-
-y = float (Tamanho_L) ** 2
-
-print ('perímetro:',x,'-área:',y)

@@ -1,6 +1,0 @@
-﻿def soma_elementos(lista):
-  tamanho = len (lista)
-  soma = 0
-  for i in range (tamanho):
-    soma = soma + lista[i]
-  return soma

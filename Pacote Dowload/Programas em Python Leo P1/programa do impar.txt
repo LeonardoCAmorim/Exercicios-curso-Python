@@ -1,9 +1,0 @@
-﻿n = int(input ('Digite o valor de n: '))
-
-vezes = 0
-numero_impar = 1
-
-while vezes < n:
-  vezes = vezes + 1
-  print (numero_impar)
-  numero_impar = numero_impar + 2

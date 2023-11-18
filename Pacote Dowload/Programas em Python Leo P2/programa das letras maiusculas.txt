@@ -1,0 +1,10 @@
+def maiusculas(frase):
+
+    i = 0
+    letras_maiusculas = ''
+    while i < len(frase):
+        if ord(frase[i]) > 64 and ord(frase[i]) < 91:
+            letras_maiusculas += frase[i]
+        i += 1
+
+    return letras_maiusculas

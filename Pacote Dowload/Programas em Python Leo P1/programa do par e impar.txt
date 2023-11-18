@@ -1,0 +1,8 @@
+﻿numero_inteiro = int (input ('Informe um número inteiro: '))
+
+ultimo_algarismo = numero_inteiro % 10
+
+if ultimo_algarismo == 0 or ultimo_algarismo == 2 or ultimo_algarismo == 4 or ultimo_algarismo == 6 or ultimo_algarismo == 8:
+  print('par')
+else:
+  print('ímpar')

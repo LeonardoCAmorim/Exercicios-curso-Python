@@ -1,0 +1,142 @@
+﻿def computador_escolhe_jogada (qtd_pecas, limite_de_pecas):
+  
+    aux = limite_de_pecas
+    deu_certo_essa_bagaça_maluca = 0
+  
+    while aux > 0:
+        if (qtd_pecas - aux) % (limite_de_pecas + 1) == 0:
+            deu_certo_essa_bagaça_maluca = True
+            return aux
+        else:
+            aux = aux - 1
+          
+    if deu_certo_essa_bagaça_maluca == False:
+        return limite_de_pecas
+
+
+
+
+def usuario_escolhe_jogada (qtd_pecas, limite_de_pecas):
+  
+    pecas_retiradas = int (input ('\n\nQuantas peças você vai tirar: '))
+  
+    if pecas_retiradas <= limite_de_pecas and pecas_retiradas > 0 and pecas_retiradas <= qtd_pecas:
+        return pecas_retiradas
+    else:
+      while pecas_retiradas > m or pecas_retiradas <= 0 or pecas_retiradas > qtd_pecas:
+          pecas_retiradas = int (input ('\n\nOops! Jogada inválida! Tente de novo.: '))
+        
+    return pecas_retiradas
+
+
+
+  
+def partida ():
+  
+    qtd_pecas = int (input ('\nQuantas peças: '))
+    limite_de_pecas = int (input ('Limite de peças por jogada: '))
+  
+    if qtd_pecas >= limite_de_pecas and qtd_pecas > 0:
+        um = 1
+    else:
+        while qtd_pecas < limite_de_pecas or qtd_pecas < 0:
+            qtd_pecas = int (input ('\nPor favor insira a quantidade de peças, sendo essa maior que o limite de peças por jogada: '))
+      
+    if qtd_pecas % (limite_de_pecas + 1) == 0 and um == 1:
+        quem_joga_agr = 1
+        print ('\n\nVoce começa!')
+        quantas_pecas_retiradas = int (usuario_escolhe_jogada (qtd_pecas, limite_de_pecas))
+    else:
+        quem_joga_agr = 2
+        print ('\n\nComputador começa!')
+        quantas_pecas_retiradas = int (computador_escolhe_jogada (qtd_pecas, limite_de_pecas))
+    
+    qtd_pecas = qtd_pecas - quantas_pecas_retiradas
+  
+    if quem_joga_agr == 2:
+        print ('\nO computador tirou', quantas_pecas_retiradas,'peças.')
+    else:
+        print ('\nVoce tirou', quantas_pecas_retiradas, 'peças.')
+      
+    print ('\nAgora restam', qtd_pecas, 'peças no tabuleiro.')
+  
+    while qtd_pecas > 0:
+        if quem_joga_agr % 2 == 0:
+            quantas_pecas_retiradas = int (usuario_escolhe_jogada (qtd_pecas, quantas_pecas_retiradas))
+            qtd_pecas = qtd_pecas - quantas_pecas_retiradas
+            print ('\n\nVoce tirou', quantas_pecas_retiradas, 'peças.')
+            print ('\nAgora restam', qtd_pecas, 'peças no tabuleiro.')
+            quem_joga_agr = quem_joga_agr + 1
+        else:
+            quantas_pecas_retiradas = int (computador_escolhe_jogada (qtd_pecas, quantas_pecas_retiradas))
+            qtd_pecas = qtd_pecas - quantas_pecas_retiradas 
+            print ('\n\nO computador tirou', quantas_pecas_retiradas,'peças.')
+            print ('\nAgora restam', qtd_pecas, 'peças no tabuleiro.')
+            quem_joga_agr = quem_joga_agr + 1
+          
+    if not quem_joga_agr % 2 == 0:
+        vencedor = 'Voce'
+    else:
+        vencedor = 'O computador'
+      
+    print ('\n\nFim do jogo! ', vencedor,'ganhou!')
+    return vencedor
+
+
+
+
+def jogo ():
+  
+    campeonato_ou_partida = int (input ('''Bem-vindo ao jogo do NIM! Escolha:
+    
+    1 - para jogar uma partida isolada
+    2 - para jogar um campeonato '''))
+  
+    while campeonato_ou_partida > 2  or campeonato_ou_partida < 1:
+        campeonato_ou_partida = int (input ('Por favor, insira um valor válido, (1 ou 2): '))
+      
+    if campeonato_ou_partida == 2:
+        campeonato = True
+        print ('\nVoce escolheu um campeonato!')
+    else:
+        campeonato = False
+      print ('\nVoce escolheu uma partida isolada!')
+    partidas = 0
+    vitorias_comp = 0
+    vitorias_usuario = 0
+
+    while campeonato == True and partidas <= 3:
+        partidas = partidas + 1
+      if partidas == 1:
+          print ('\n\n**** Rodada 1 ****')
+          vencedor = partida ()
+        
+        if vencedor == 'O computador':
+            vitorias_comp = vitorias_comp + 1
+        else:
+            vitorias_usuario = vitorias_usuario + 1
+          
+      elif partidas == 2:
+          print ('\n\n**** Rodada 2 ****')
+          partida ()
+
+        if vencedor == 'O computador':
+            vitorias_comp = vitorias_comp + 1
+        else:
+            vitorias_usuario = vitorias_usuario + 1
+          print ('\n\n**** Rodada 3 ****')
+          partida ()
+
+        if vencedor == 'O computador':
+            vitorias_comp = vitorias_comp + 1
+        else:
+            vitorias_usuario = vitorias_usuario + 1
+          
+    if campeonato == True:
+        print ('\n\n**** Final do campeonato! ****')
+        print ('\nPlacar: Você', vitorias_usuario,'X', vitorias_comp,'Computador')
+    else:
+        partida ()
+
+
+jogo ()

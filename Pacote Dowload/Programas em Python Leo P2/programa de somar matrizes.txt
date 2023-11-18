@@ -1,0 +1,13 @@
+def soma_matrizes(matriz_1, matriz_2):
+  
+    if len(matriz_1) != len(matriz_2):
+        return False
+    else:
+      
+        matriz_3 = []
+        for j in range(len(matriz_1)):
+            linha = []
+            for i in range(len(matriz_1[j])):
+                linha.append(matriz_1[j][i] + matriz_2[j][i])
+            matriz_3.append(linha)
+        return matriz_3

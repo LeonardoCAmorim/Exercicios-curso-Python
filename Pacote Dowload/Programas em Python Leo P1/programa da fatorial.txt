@@ -1,0 +1,7 @@
+﻿import math
+
+n = int(input ('Digite o valor de n: '))
+
+fatorial_n = math.factorial(n)
+
+print (fatorial_n)

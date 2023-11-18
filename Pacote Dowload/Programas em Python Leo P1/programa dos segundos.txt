@@ -1,0 +1,10 @@
+﻿ent_seg = input ('Por favor, entre com o número de segundos que deseja converter: ')
+
+saida_dia = float (ent_seg) // 86400
+resto_dia = float (ent_seg) % 86400
+saida_hr = resto_dia // 3600
+resto_hr = resto_dia % 3600
+saida_min = resto_hr // 60
+saida_seg = resto_hr % 60
+
+print (saida_dia, 'dias,', saida_hr, 'horas,', saida_min, 'minutos e', saida_seg, 'segundos.')

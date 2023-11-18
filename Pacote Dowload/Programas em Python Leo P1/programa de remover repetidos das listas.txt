@@ -1,0 +1,8 @@
+﻿def remove_repetidos(lista):
+  lista.sort()
+  nova_lista = []
+  tamanho = len(lista)
+  for numero in range(tamanho):
+    if lista[numero] != lista[numero - 1]:
+      nova_lista.append(lista[numero])
+  return nova_lista
